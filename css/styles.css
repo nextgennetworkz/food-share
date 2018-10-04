@@ -1,0 +1,274 @@
+
+
+/*--------------- common styles ----------------*/
+
+@font-face {
+    font-family: Roboto-Light;
+    src: url(../fonts/Roboto-Light.ttf);
+}
+@font-face {
+    font-family: Roboto-Bold;
+    src: url(../fonts/Roboto-Bold.ttf);
+}
+@font-face {
+    font-family: Roboto-Regular;
+    src: url(../fonts/Roboto-Regular.ttf);
+}
+@font-face {
+    font-family: Roboto-Thin;
+    src: url(../fonts/Roboto-Thin.ttf);
+}
+@font-face {
+    font-family: Raleway-Light;
+    src: url(../fonts/Raleway-Light.ttf);
+}
+@font-face {
+    font-family: Spirax-Regular;
+    src: url(../fonts/Spirax-Regular.ttf);
+}
+
+/*--------------- common styles ----------------*/
+
+/*navigation*/
+
+.page_header{
+    background: #ffffff;
+    border: none;
+    padding: 10px;
+    border-bottom: 2px solid #f7931e;
+    font-family: Roboto-Light;
+    margin-bottom: 0px;
+    border-radius: 0px;
+}
+.navbar-nav>li {
+    padding: 12px;
+    font-size: 16px;
+}
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover{
+    color: #f7931e;
+    background: #ffffff;
+    border-bottom: solid 2px #f7931e;
+}
+/*.............main slider..................*/
+.main-slider-sec img{
+    width: 100%;
+    height: 100vh;
+}
+.main-slider-sec{
+    position: relative;
+}
+.main-slider-sec .home-button button{
+    font-family: Raleway-Light;
+    text-transform: uppercase;
+    background: #f7931e;
+    padding: 15px;
+    font-size: 35px;
+    position: absolute;
+    top: 70%;
+    z-index: 10000000000000000000000000000;
+    left: 37%;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    -webkit-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+}
+
+/*...............join us section...........................*/
+#join{
+    background: url("../images/join-bottom.png") no-repeat;
+    background-position: bottom center;
+    /*background: fixed;*/
+    min-height: 100vh;
+}
+.join-container{
+    background: #ffffff;
+    margin-top: 50px;
+}
+.join-container h1{
+    font-family: Spirax-Regular;
+    text-align: center;
+    color: #f7931e;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+.join-container .form-wrp{
+    margin-bottom: 20px;
+}
+.join-container .form-wrp input{
+    padding: 12px;
+    font-family: Raleway-Light;
+    border: 1px solid #f7931e;
+    border-radius: 50px;
+    width: 100%;
+    text-align: center;
+}
+.join-container .form-wrp input:focus{
+    outline:none;
+}
+.join-container button{
+    font-family: Raleway-Light;
+    text-transform: uppercase;
+    background: #f7931e;
+    padding: 15px;
+    width: 30%;
+    font-size: 25px;
+    color: #ffffff;
+    border: none;
+    margin: 0px auto;
+    display: block;
+    border-radius: 5px;
+    -webkit-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+}
+.join-container button:focus{
+    outline: none;
+}
+/*------------------ signing page ------------------*/
+
+.signing{
+    background: url("../images/signing-bg.jpg") fixed;
+    background-size: cover;
+}
+.signing .signing-form{
+    /*min-height: 300px;*/
+    background: #ffffffbd;
+    text-align: center;
+    padding: 30px;
+    width: 40%;
+    display: block;
+    margin: 100px auto;
+}
+.signing .signing-form h2{
+    font-family: Raleway-Light;
+    color: #f7931e;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+.signing .signing-form .form-wrp{
+    margin-bottom: 20px;
+}
+.signing .signing-form .form-wrp input{
+    padding: 12px;
+    font-family: Raleway-Light;
+    border: 1px solid #f7931e;
+    border-radius: 50px;
+    width: 100%;
+    text-align: center;
+}
+.signing .signing-form .form-wrp input:focus{
+    outline:none;
+}
+.signing .signing-form button{
+    font-family: Raleway-Light;
+    text-transform: uppercase;
+    background: #f7931e;
+    padding: 15px;
+    width: 50%;
+    font-size: 20px;
+    color: #ffffff;
+    border: none;
+    margin: 0px auto;
+    display: block;
+    border-radius: 5px;
+    -webkit-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+}
+.signing .signing-form button:focus{
+    outline: none;
+}
+/*.....................available foods.................*/
+#available-foods{
+    min-height: 100vh;
+    font-family: Raleway-Light;
+    padding: 20px;
+}
+#available-foods h1{
+    font-family: Spirax-Regular;
+    color: #f7931e;
+    text-transform: uppercase;
+    text-align: center;
+}
+#available-foods .food-item{
+    padding: 25px;
+    cursor: pointer;
+    font-family: Raleway-Light;
+    position: relative;
+}
+#available-foods .food-item:hover img{
+    opacity: 0.5;
+}
+#available-foods .food-item:hover .middle{
+    opacity: 1;
+}
+#available-foods .food-item .middle {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+#available-foods .food-item:hover .middle{
+    opacity: 1;
+}
+#available-foods .food-item .middle button{
+    background: #f7931e;
+    color: #ffffff;
+    padding: 10px;
+    opacity: 1;
+    border: none;
+}
+#available-foods .food-item .item-name{
+    position: absolute;
+    top: 20px;
+    right: 0px;
+    background: #f7931e;
+    color: #ffffff;
+    padding: 10px;
+
+
+}
+#available-foods .food-item .item-name:before{
+    content: '';
+    position: absolute;
+    border-top: solid transparent 20px;
+    border-bottom: solid transparent 20px;
+    border-left: solid transparent 13px;
+    border-right: solid #f7931e 15px;
+    left: -28px;
+    top: 0px;
+}
+#available-foods .food-item .item-name:after{
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    bottom: -25px;
+    right: 0px;
+    border-style: solid;
+    border-width: 25px 25px 0 0;
+    border-color: #c57210 transparent transparent transparent;
+}
+#available-foods .food-item:hover .item-name{
+    display: none;
+}
+#available-foods .food-item p{
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+}
+@media (max-width: 1024px) {
+
+
+}
+
+
+
+
+/*------------ Responsive ----------------*/
