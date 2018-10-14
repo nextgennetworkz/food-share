@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <header>
     <!--bootstrap nav bar from w3schools-->
     <nav class="navbar navbar-default page_header">
@@ -17,8 +21,14 @@
                     <li class="active"><a href="/food-share/web/index.php">Home</a></li>
                     <li><a href="#available-foods">Avialable Foods</a></li>
                     <li><a href="/food-share/web/create-food-offering/offer-food.php">Share Foods</a></li>
-                    <li><a href="#join">Join With Us</a></li>
-                    <li><a href="/food-share/web/sign-in/sign-in.php">Sign In to My Account</a></li>
+
+                    <!-- Let's show sign in / up options for unsigned sessions -->
+                    <?php
+                    if (!isset($_SESSION['login_user'])) {
+                        echo "<li><a href=\"#join\">Join With Us</a></li>";
+                        echo "<li><a href=\"/food-share/web/sign-in/sign-in.php\">Sign In to My Account</a></li>";
+                    }
+                    ?>
                 </ul>
             </div>
         </div>

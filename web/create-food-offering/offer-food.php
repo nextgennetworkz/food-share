@@ -1,3 +1,7 @@
+<?php
+include('../../resources/session.php');
+?>
+
 <!--<form action="offer-food-process.php" method="post">-->
 <!--    Title: <input type="text" id="title" name="title" required="required"><br>-->
 <!--    Description: <input type="text" id="description" name="description" required="required"><br>-->
