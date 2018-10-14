@@ -9,16 +9,16 @@
                     <span class="icon-bar"></span>
                 </button>
                 <div class="logo clearfix">
-                    <a href="index.php"> <img src="../images/Save_Food.png" class="img-responsive"></a>
+                    <a href="index.php"> <img src="/food-share/images/Save_Food.png" class="img-responsive"></a>
                 </div>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right links">
-                   <li class="active"><a href="#home">Home</a></li>
-                   <li><a href="#available-foods">Avialable Foods</a></li>
-                   <li><a href="index.php">Home</a></li>
-                   <li><a href="#join">Join With Us</a></li>
-                   <li><a href="signing.php">Sign In to My Account</a></li>
+                    <li class="active"><a href="/food-share/web/index.php">Home</a></li>
+                    <li><a href="#available-foods">Avialable Foods</a></li>
+                    <li><a href="/food-share/web/create-food-offering/offer-food.php">Share Foods</a></li>
+                    <li><a href="#join">Join With Us</a></li>
+                    <li><a href="/food-share/web/sign-in/sign-in.php">Sign In to My Account</a></li>
                 </ul>
             </div>
         </div>
