@@ -5,6 +5,8 @@
  * Date: 10/10/18
  * Time: 1:47 AM
  */
+include('../../resources/session.php');
+
 require_once("../../config/db-connection.php");
 
 // let's get the current time stamp
