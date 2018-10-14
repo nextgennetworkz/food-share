@@ -16,6 +16,9 @@ $id = $_GET['id'];
 $sql = "SELECT id, title, description, category, pick_up_location, ready_time, pick_up_time, is_available, email, phone_number FROM share_food.food_offering WHERE id = $id";
 $result = $conn->query($sql);
 
+if ($result->num_rows > 0) {
+    $row = $result->fetch_assoc();
+}
 $conn->close();
 ?>
 
