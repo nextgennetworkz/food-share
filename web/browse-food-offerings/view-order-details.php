@@ -5,6 +5,8 @@
  * Date: 10/12/18
  * Time: 7:47 AM
  */
+include('../../resources/session.php');
+
 require_once("../../config/db-connection.php");
 
 // Let's extract ID from URL

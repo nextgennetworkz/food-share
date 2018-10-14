@@ -11,7 +11,7 @@
  * @param $url
  * @param bool $permanent
  */
-function Redirect($url, $permanent = false)
+function redirect($url, $permanent = false)
 {
     header('Location: ' . $url, true, $permanent ? 301 : 302);
     exit();

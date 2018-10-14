@@ -5,6 +5,8 @@
  * Date: 10/13/18
  * Time: 6:35 AM
  */
+include('../../resources/session.php');
+
 require_once("../../config/db-connection.php");
 require_once("../../resources/show-alert.php");
 require_once("../../resources/redirect.php");
@@ -25,5 +27,5 @@ if ($conn->query($sql) === TRUE) {
 $conn->close();
 
 // Let's redirect to view-all-food-offerings.php
-Redirect('view-all-food-offerings.php', false);
+redirect('view-all-food-offerings.php', false);
 exit();
