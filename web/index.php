@@ -176,6 +176,20 @@
                     </div>
                     <div class="col-sm-6">
                         <div class="form-wrp">
+                            <select id="category" name="category" required="required">
+                                <option selected="selected" disabled="disabled">Select your preferred food category
+                                </option>
+                                <option value="Fruits">Fruits</option>
+                                <option value="Vegetables">Vegetables</option>
+                                <option value="Protein">Protein</option>
+                                <option value="Dairy">Dairy</option>
+                                <option value="Grains">Grains</option>
+                                <option value="Oils">Oils</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-wrp">
                             <input type="text" placeholder="Enter Your Last Name" id="last_name" name="last_name"
                                    required="required">
                         </div>

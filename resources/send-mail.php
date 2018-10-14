@@ -18,6 +18,9 @@ function sendMail($receipient, $subject, $message)
     // use wordwrap() if lines are longer than 70 characters
     $message = wordwrap($message, 70);
 
+    // Let's append the signature
+    $message = $message . "\n\nThank you!\nRegards,\nfood-share.";
+
     // send email
     mail($receipient, $subject, $message);
 }

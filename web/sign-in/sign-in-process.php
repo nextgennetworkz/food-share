@@ -18,14 +18,18 @@ if ($result->num_rows > 0) {
     $login_session = $email;
     $_SESSION['login_user'] = $email;
 
+    // Let's close database connection
+    $conn->close();
+
     // Let's redirect user to home page
     redirect("../");
 } else {
     // Let's alert user about incorrect username and password
     displayAlert("Wrong username / password!!");
 
+    // Let's close database connection
+    $conn->close();
+
     // Let's redirect to login page again
     redirect("sign-in.php");
 }
-
-$conn->close();

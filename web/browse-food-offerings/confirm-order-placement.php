@@ -29,7 +29,7 @@ if ($conn->query($sql) === TRUE) {
 
     $email = $row['email'];
     $title = $row['title'];
-    $message = "Dear donor,\n\nYour donation of $title has been accepted.\n\nThank you!\nRegards,\nfood-share.";
+    $message = "Hello donor,\n\nYour donation of $title has been accepted.";
 
     sendMail($email, "Request for food", $message);
 

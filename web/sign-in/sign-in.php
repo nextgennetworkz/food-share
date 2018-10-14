@@ -1,5 +1,6 @@
 <?php include("../header.php"); ?>
 <?php include("../main-nav.php"); ?>
+
     <section class="signing">
         <div class="container ">
             <div class="signing-form">
@@ -13,9 +14,9 @@
                     </div>
                     <button>SIGN IN</button>
                 </form>
-
+                <a href="../#join">Don't have an account? Create yours now.</a>
             </div>
-
         </div>
     </section>
+
 <?php include("../footer.php"); ?>
