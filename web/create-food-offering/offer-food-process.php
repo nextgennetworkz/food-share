@@ -12,6 +12,25 @@ require_once("../../resources/show-alert.php");
 require_once("../../resources/redirect.php");
 require_once("../../resources/send-mail.php");
 
+// Let's validate the uploaded image
+if (isset($_FILES['uploaded-file'])) {
+    if ($_FILES['uploaded-file']['error'] == 0) {
+        $image = $conn->real_escape_string(file_get_contents($_FILES  ['uploaded-file']['tmp_name']));
+    } else {
+        // Let's alert the user
+        displayAlert("An error occurred while trying to upload the image");
+
+        // Let's redirect user to offer-food page
+        redirect("offer-food.php", false);
+    }
+} else {
+    // No files uploaded, let's alert the user
+    displayAlert("Please upload an image");
+
+    // Let's redirect user to the offer-food page
+    redirect("offer-food.php", false);
+}
+
 // Let's extract request parameters
 $subject = $_POST["title"];
 $description = $_POST["description"];
@@ -22,7 +41,7 @@ $ready_time = $_POST["pick-up-time"];
 $email = $_POST["email"];
 $phone_number = $_POST["phone-number"];
 
-$sql = "INSERT INTO share_food.food_offering (title, description, category, pick_up_location, ready_time, pick_up_time, email, phone_number, is_available) VALUES ('$subject', '$description', '$category', '$pick_up_location', '$ready_time', '$pick_up_time', '$email', '$phone_number', '1')";
+$sql = "INSERT INTO share_food.food_offering (title, description, category, pick_up_location, ready_time, pick_up_time, email, phone_number, image, is_available) VALUES ('$subject', '$description', '$category', '$pick_up_location', '$ready_time', '$pick_up_time', '$email', '$phone_number', '$image', '1')";
 
 if ($conn->query($sql) === TRUE) {
     // Let's display success message
@@ -52,4 +71,4 @@ if ($conn->query($sql) === TRUE) {
 $conn->close();
 
 // Let's redirect to browse food offerings page
-//redirect('../browse-food-offerings/view-all-food-offerings.php', false);
+redirect('../browse-food-offerings/view-all-food-offerings.php', false);

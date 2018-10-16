@@ -16,7 +16,11 @@ include('../../resources/session.php');
     <div class="container ">
         <div class="offer-form">
             <h2>Share Foods</h2>
-            <form action="offer-food-process.php" method="post">
+            <form action="offer-food-process.php" method="post" enctype="multipart/form-data">
+                <div class="form-wrp">
+                    <label>Title</label><br>
+                    <input type="file" id="uploaded-file" name="uploaded-file" required="required">
+                </div>
                 <div class="form-wrp">
                     <label>Title</label><br>
                     <input type="text" placeholder="Enter Title" id="title" name="title" required="required">
