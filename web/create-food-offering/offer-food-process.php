@@ -25,7 +25,7 @@ if (isset($_FILES['uploaded-file'])) {
     }
 } else {
     // No files uploaded, let's alert the user
-    displayAlert("Please upload an image");
+    displayAlert("You must upload an image when making a donation");
 
     // Let's redirect user to the offer-food page
     redirect("offer-food.php", false);
@@ -45,7 +45,7 @@ $sql = "INSERT INTO share_food.food_offering (title, description, category, pick
 
 if ($conn->query($sql) === TRUE) {
     // Let's display success message
-    displayAlert("New food offering created successfully");
+    displayAlert("Your food donation addition was successfully.");
 
     // Let's send emails to users whose preferred category is the same as of this donation
     $sql = "SELECT first_name, last_name, email_address FROM share_food.user WHERE preferred_category = '$category';";

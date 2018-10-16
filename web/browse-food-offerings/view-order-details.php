@@ -45,8 +45,6 @@ echo " | ";
 echo "Phone number: " . $row["phone_number"];
 echo " | ";
 echo "<a href=\"confirm-order-placement.php?id=" . $row["id"] . "\">Confirm</a>";
-echo "<br>";
-echo "========================================================================================================";
 ?>
 </body>
 </html>

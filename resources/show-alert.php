@@ -7,6 +7,6 @@
 function displayAlert($message)
 {
     echo '<script language="javascript">';
-    echo 'alert("Mock alert box!")';
+    echo 'alert("' . $message . '")';
     echo '</script>';
 }

@@ -19,9 +19,6 @@ $id = $_GET['id'];
 $sql = "UPDATE share_food.food_offering SET is_available = '0' WHERE id = $id";
 
 if ($conn->query($sql) === TRUE) {
-    // Let's display success message
-    displayAlert("Order updated successfully");
-
     // Let's send a mail to the corresponding donor
     $sql = "SELECT title, email FROM share_food.food_offering WHERE id = $id;";
     $result = $conn->query($sql);
@@ -29,15 +26,12 @@ if ($conn->query($sql) === TRUE) {
 
     $email = $row['email'];
     $title = $row['title'];
-    $message = "Hello donor,\n\nYour donation of $title has been accepted.";
+    $message = "Hello donor,\n\nYour donation of $title has been requested.";
 
     sendMail($email, "Request for food", $message);
 
-    // Let's display mail sent alert
-    displayAlert("Email sent successfully");
-
-    // Let's redirect to view-all-food-offerings page
-    redirect("view-all-food-offerings.php");
+    // Let's display success message
+    displayAlert("Your donation request has been processed successfully.");
 } else {
     echo "Error updating order: " . $conn->error;
 }
@@ -46,4 +40,3 @@ $conn->close();
 
 // Let's redirect to view-all-food-offerings.php
 redirect('view-all-food-offerings.php', false);
-exit();

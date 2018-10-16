@@ -22,7 +22,7 @@ if ($result->num_rows > 0) {
     $conn->close();
 
     // Let's redirect user to home page
-    redirect("../");
+    redirect("../", false);
 } else {
     // Let's alert user about incorrect username and password
     displayAlert("Wrong username / password!!");
@@ -31,5 +31,5 @@ if ($result->num_rows > 0) {
     $conn->close();
 
     // Let's redirect to login page again
-    redirect("sign-in.php");
+    redirect("sign-in.php", false);
 }
