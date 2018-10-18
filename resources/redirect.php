@@ -14,7 +14,7 @@
 function redirect($url, $permanent = false)
 {
     echo '<script language="javascript">';
-    echo 'window.location.href=\'admin/ahm/panel\';';
+    echo 'window.location.replace("' . $url . '")';
     echo '</script>';
     exit();
 }

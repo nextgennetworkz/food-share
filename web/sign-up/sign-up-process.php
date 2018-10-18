@@ -13,7 +13,7 @@ $first_name = $_POST["first_name"];
 $last_name = $_POST["last_name"];
 $category = $_POST["category"];
 $email_address = $_POST["email_address"];
-$password = $_POST["password"];
+$password = md5($_POST["password"]);
 
 // Let's check if an account already exists with this email
 $sql = "SELECT * FROM share_food.user WHERE email_address = '$email_address';";

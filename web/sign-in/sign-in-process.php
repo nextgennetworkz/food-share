@@ -7,7 +7,7 @@ require_once("../../resources/redirect.php");
 
 // Let's extract request parameters
 $email = $_POST["email"];
-$password = $_POST["password"];
+$password = md5($_POST["password"]);
 
 // Let's check if username and password are correct
 $sql = "SELECT * FROM share_food.user WHERE email_address = '$email' AND password = '$password';";
