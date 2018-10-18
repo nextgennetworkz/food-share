@@ -1,5 +1,9 @@
-<?php include("header.php"); ?>
-<?php include("main-nav.php"); ?>
+<?php
+session_start();
+
+include("header.php");
+include("main-nav.php");
+?>
 
     <section id="home" class="main-slider-sec " xmlns="http://www.w3.org/1999/html">
         <div class="home-button">

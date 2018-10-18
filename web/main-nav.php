@@ -1,7 +1,3 @@
-<?php
-session_start();
-?>
-
 <header>
     <!--bootstrap nav bar from w3schools-->
     <nav class="navbar navbar-default page_header">
