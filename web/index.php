@@ -7,7 +7,7 @@ include("main-nav.php");
 
     <section id="home" class="main-slider-sec " xmlns="http://www.w3.org/1999/html">
         <div class="home-button">
-            <button>Share Foods Now</button>
+            <button onclick="window.location.href='/food-share/web/create-food-offering/offer-food.php'">Share Foods Now</button>
         </div>
         <!-- #region Jssor Slider Begin -->
         <!-- Generator: Jssor Slider Maker -->
@@ -157,9 +157,7 @@ include("main-nav.php");
                     </div>
                 </div>
             </div>
-            <button class="view-all">View All Items</button>
-
-
+            <button onclick="window.location.href='/food-share/web/browse-food-offerings/view-all-food-offerings.php'"class="view-all">View All Items</button>
         </div>
     </section>
 
