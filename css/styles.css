@@ -349,6 +349,7 @@
     padding: 10px;
     opacity: 1;
     border: none;
+    text-decoration: none;
 }
 
 #available-foods .food-item .item-name {
@@ -450,8 +451,104 @@
     text-decoration: none;
     color: #ffffff;
 }
-@media (max-width: 1024px) {
-
-}
-
 /*------------ Responsive ----------------*/
+
+@media (max-width: 1024px) {
+    #join{
+        min-height: 119vh;
+    }
+    .join-container button{
+        font-size: 20px;
+    }
+    #available-foods .food-item p {
+        font-size: 12px;
+    }
+}
+@media (max-width: 768px) {
+    .navbar-nav > li {
+        padding: 0px;
+        font-size: 12px;
+    }
+    .main-slider-sec .home-button button{
+        left: 27%;
+    }
+    #available-foods .view-all{
+        padding: 12px;
+        font-size: 21px;
+    }
+    .join-container button {
+        font-size: 17px;
+    }
+    .signing .signing-form{
+        width: 50%;
+    }
+    .offer-food .offer-form{
+        width: 80%;
+    }
+}
+@media (max-width: 425px){
+    .main-slider-sec .home-button button{
+        left: 33%;
+        padding: 10px;
+        font-size: 15px;
+        top: 55%;
+    }
+    #available-foods .view-all {
+        padding: 14px;
+        font-size: 16px;
+        width: 50%;
+    }
+    .join-container button {
+        font-size: 15px;
+        width: 50%;
+    }
+    #join {
+        min-height: 139vh;
+    }
+    #available-foods .food-item p {
+        font-size: 11px;
+    }
+    .signing .signing-form {
+        width: 80%;
+        padding: 15px;
+    }
+    .signing .signing-form h2{
+        font-size: 23px;
+    }
+    .offer-food .offer-form {
+        width: 90%;
+        padding: 16px;
+    }
+}
+@media (max-width: 375px){
+    .join-container button {
+        font-size: 13px;
+    }
+    #available-foods .view-all {
+        font-size: 13px;
+    }
+    #available-foods .food-item p {
+        font-size: 10px;
+    }
+    .signing .signing-form {
+        width: 90%;
+        padding: 14px;
+    }
+    .signing .signing-form button{
+        padding: 8px;
+        width: 57%;
+        font-size: 20px;
+    }
+    .offer-food .offer-form button{
+        width: 56%;
+    }
+}
+@media (max-width: 325px){
+    .main-slider-sec .home-button button {
+        left: 27%;
+    }
+    .offer-food .offer-form button{
+        width: 60%;
+        font-size: 17px;
+    }
+}
