@@ -3,11 +3,15 @@ session_start();
 
 include("header.php");
 include("main-nav.php");
+
+require_once("../config/db-connection.php");
 ?>
 
     <section id="home" class="main-slider-sec " xmlns="http://www.w3.org/1999/html">
         <div class="home-button">
-            <button onclick="window.location.href='/food-share/web/create-food-offering/offer-food.php'">Share Foods Now</button>
+            <button onclick="window.location.href='/food-share/web/create-food-offering/offer-food.php'">Share Foods
+                Now
+            </button>
         </div>
         <!-- #region Jssor Slider Begin -->
         <!-- Generator: Jssor Slider Maker -->
@@ -72,92 +76,48 @@ include("main-nav.php");
 
     <section id="available-foods">
         <div class="container">
-            <h1>available food items</h1>
-            <div class="col-sm-4">
-                <div class="food-item">
-                    <div class="item-name">
-                        <span>Butter Chicken</span>
+
+            <?php
+            // let's get the current time stamp
+            $current_time = time();
+            $current_time = date("Y-m-d H:i:s");
+
+            // Let's load all available food offerings
+            $sql = "SELECT id, title, description, category, pick_up_location, ready_time, pick_up_time, email, phone_number, image FROM share_food.food_offering WHERE is_available = 1 AND pick_up_time > '$current_time' ORDER BY ready_time";
+            $result = $conn->query($sql);
+            ?>
+            <div class="container list-items">
+                <h1>available food items</h1>
+                <?php
+                while ($row = $result->fetch_assoc()) {
+                    ?>
+                    <div class="col-sm-4">
+                        <div class="food-item">
+                            <div class="item-name">
+                                <span><?php echo $row['title']; ?></span>
+                            </div>
+                            <img src="data:image/jpeg;base64,<?php echo base64_encode($row['image']) ?>"
+                                 class="img-responsive"/>
+                            <div class="middle">
+                                <p>Category: <?php echo $row['category']; ?></p><br>
+                                <!--                        <p>Description: -->
+                                <?php //echo $row['description']; ?><!--</p><br>-->
+                                <p>Expire Date: <?php echo $row['pick_up_time']; ?></p><br>
+                                <p>Pick-up Location: <?php echo $row['pick_up_location']; ?></p><br>
+                                <!--                        <p>Finished cooking at: -->
+                                <?php //echo $row['ready_time']; ?><!--</p><br>-->
+                                <!--                        <p>Phone : -->
+                                <?php //echo $row['phone_number']; ?><!--</p><br>-->
+                            </div>
+                        </div>
                     </div>
-                    <img src="../images/butter%20chicken.jpg" class="img-responsive ">
-                    <div class="middle">
-                        <p>Category: www</p><br>
-                        <p>Expire Date: 2018.12.12</p><br>
-                        <p>Location: Ratnapura</p><br>
-                        <button>Order Now</button>
-                    </div>
-                </div>
+                    <?php
+                }
+                $conn->close();
+                ?>
+
+                <button class="view-all">View All Items</button>
             </div>
-            <div class="col-sm-4">
-                <div class="food-item">
-                    <div class="item-name">
-                        <span>Burger</span>
-                    </div>
-                    <img src="../images/burger.jpg" class="img-responsive">
-                    <div class="middle">
-                        <p>Category: www</p><br>
-                        <p>Expire Date: 2018.12.12</p><br>
-                        <p>Location: Ratnapura</p><br>
-                        <button>Order Now</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="food-item">
-                    <div class="item-name">
-                        <span>Cheese Cake Cups</span>
-                    </div>
-                    <img src="../images/cheese%20cake%20cups.jpg" class="img-responsive">
-                    <div class="middle">
-                        <p>Category: www</p><br>
-                        <p>Expire Date: 2018.12.12</p><br>
-                        <p>Location: Ratnapura</p><br>
-                        <button>Order Now</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="food-item">
-                    <div class="item-name">
-                        <span>Cup Cakes</span>
-                    </div>
-                    <img src="../images/cupcakes.jpg" class="img-responsive">
-                    <div class="middle">
-                        <p>Category: www</p><br>
-                        <p>Expire Date: 2018.12.12</p><br>
-                        <p>Location: Ratnapura</p><br>
-                        <button>Order Now</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="food-item">
-                    <div class="item-name">
-                        <span>Meat balls</span>
-                    </div>
-                    <img src="../images/meatballs.jpg" class="img-responsive">
-                    <div class="middle">
-                        <p>Category: www</p><br>
-                        <p>Expire Date: 2018.12.12</p><br>
-                        <p>Location: Ratnapura</p><br>
-                        <button>Order Now</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="food-item">
-                    <div class="item-name">
-                        <span>Crusted Lamb</span>
-                    </div>
-                    <img src="../images/crusted%20lamb.jpg" class="img-responsive">
-                    <div class="middle">
-                        <p>Category: www</p><br>
-                        <p>Expire Date: 2018.12.12</p><br>
-                        <p>Location: Ratnapura</p><br>
-                        <button>Order Now</button>
-                    </div>
-                </div>
-            </div>
-            <button onclick="window.location.href='/food-share/web/browse-food-offerings/view-all-food-offerings.php'"class="view-all">View All Items</button>
         </div>
     </section>
 
