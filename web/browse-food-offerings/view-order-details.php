@@ -5,10 +5,9 @@
  * Date: 10/12/18
  * Time: 7:47 AM
  */
-session_start();
+include('../../resources/session.php');
 include("../header.php");
 include("../main-nav.php");
-include('../../resources/session.php');
 
 require_once("../../config/db-connection.php");
 

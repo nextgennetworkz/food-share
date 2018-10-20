@@ -1,9 +1,7 @@
 <?php
 
-session_start();
 include("../header.php");
 include("../main-nav.php");
-include('../../resources/session.php');
 
 require_once("../../config/db-connection.php");
 
