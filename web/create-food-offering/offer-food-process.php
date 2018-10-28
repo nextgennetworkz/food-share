@@ -36,12 +36,14 @@ $subject = $_POST["title"];
 $description = $_POST["description"];
 $category = $_POST["category"];
 $pick_up_location = $_POST["pick-up-location"];
+$lat = $_POST["lat"];
+$lng = $_POST["lng"];
 $pick_up_time = $_POST["ready-time"];
 $ready_time = $_POST["pick-up-time"];
 $email = $_POST["email"];
 $phone_number = $_POST["phone-number"];
 
-$sql = "INSERT INTO share_food.food_offering (title, description, category, pick_up_location, ready_time, pick_up_time, email, phone_number, image, is_available) VALUES ('$subject', '$description', '$category', '$pick_up_location', '$ready_time', '$pick_up_time', '$email', '$phone_number', '$image', '1')";
+$sql = "INSERT INTO share_food.food_offering (title, description, category, lat, lng, ready_time, pick_up_time, email, phone_number, image, is_available) VALUES ('$subject', '$description', '$category', '$lat', '$lng', '$ready_time', '$pick_up_time', '$email', '$phone_number', '$image', '1')";
 
 if ($conn->query($sql) === TRUE) {
     // Let's display success message
@@ -65,7 +67,8 @@ if ($conn->query($sql) === TRUE) {
         }
     }
 } else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
+    $alert = "Error:<br>" . $conn->error . "<br>" . $lat . "<br>" . $lng;
+    displayAlert($alert);
 }
 
 $conn->close();

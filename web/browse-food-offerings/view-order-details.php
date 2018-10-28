@@ -15,7 +15,7 @@ require_once("../../config/db-connection.php");
 $id = $_GET['id'];
 
 // Let's load order info from database
-$sql = "SELECT id, title, description, category, pick_up_location, ready_time, pick_up_time, is_available, email, phone_number, image FROM share_food.food_offering WHERE id = $id";
+$sql = "SELECT id, title, description, category, lat, lng, ready_time, pick_up_time, is_available, email, phone_number, image FROM share_food.food_offering WHERE id = $id";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
