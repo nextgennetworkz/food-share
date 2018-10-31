@@ -10,7 +10,7 @@ $current_time = time();
 $current_time = date("Y-m-d H:i:s");
 
 // Let's load all available food offerings
-$sql = "SELECT id, title, description, category, pick_up_location, ready_time, pick_up_time, email, phone_number, image FROM share_food.food_offering WHERE is_available = 1 AND pick_up_time > '$current_time' ORDER BY ready_time";
+$sql = "SELECT id, title, description, category, ready_time, pick_up_time, email, phone_number, image FROM share_food.food_offering WHERE is_available = 1 AND pick_up_time > '$current_time' ORDER BY ready_time";
 $result = $conn->query($sql);
 ?>
     <section id="available-foods">
@@ -18,24 +18,22 @@ $result = $conn->query($sql);
             <h1>available food items</h1>
             <?php
             while ($row = $result->fetch_assoc()) {
-            ?>
-            <div class="col-sm-4">
-                <div class="food-item">
-                    <div class="item-name">
-                        <span><?php echo $row['title']; ?></span>
-                    </div>
-                    <img src="data:image/jpeg;base64,<?php echo base64_encode($row['image']) ?>" class="img-responsive"/>
-                    <div class="middle">
-                        <p>Category: <?php echo $row['category']; ?></p><br>
-<!--                        <p>Description: --><?php //echo $row['description']; ?><!--</p><br>-->
-                        <p>Expire Date: <?php echo $row['pick_up_time']; ?></p><br>
-                        <p>Pick-up Location: <?php echo $row['pick_up_location']; ?></p><br>
-<!--                        <p>Finished cooking at: --><?php //echo $row['ready_time']; ?><!--</p><br>-->
-<!--                        <p>Phone : --><?php //echo $row['phone_number']; ?><!--</p><br>-->
-                        <a href="/food-share/web/browse-food-offerings/view-order-details.php?id=<?php echo $row['id']; ?>"> Order now</a>
+                ?>
+                <div class="col-sm-4">
+                    <div class="food-item">
+                        <div class="item-name">
+                            <span><?php echo $row['title']; ?></span>
+                        </div>
+                        <img src="data:image/jpeg;base64,<?php echo base64_encode($row['image']) ?>"
+                             class="img-responsive"/>
+                        <div class="middle">
+                            <p>Category: <?php echo $row['category']; ?></p><br>
+                            <p>Expire Date: <?php echo $row['pick_up_time']; ?></p><br>
+                            <a href="/food-share/web/browse-food-offerings/view-order-details.php?id=<?php echo $row['id']; ?>">
+                                Order now</a>
+                        </div>
                     </div>
                 </div>
-            </div>
                 <?php
             }
             $conn->close();
