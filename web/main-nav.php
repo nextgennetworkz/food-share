@@ -15,8 +15,8 @@
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right links">
                     <li <?php if (basename($_SERVER['PHP_SELF']) == 'index.php') echo 'class="active"' ?>><a href="/food-share/web/index.php">Home</a></li>
-                    <li <?php if (basename($_SERVER['PHP_SELF']) == 'view-all-food-offerings.php') echo 'class="active"' ?>><a href="/food-share/web/browse-food-offerings/view-all-food-offerings.php">Available Foods</a></li>
-                    <li <?php if (basename($_SERVER['PHP_SELF']) == 'offer-food.php') echo 'class="active"' ?>><a href="/food-share/web/create-food-offering/offer-food.php">Share Foods</a></li>
+                    <li <?php if (basename($_SERVER['PHP_SELF']) == 'view-all-food-offerings.php') echo 'class="active"' ?>><a href="/food-share/web/browse-food-offerings/view-all-food-offerings.php">Available Food</a></li>
+                    <li <?php if (basename($_SERVER['PHP_SELF']) == 'offer-food.php') echo 'class="active"' ?>><a href="/food-share/web/create-food-offering/offer-food.php">Share Food</a></li>
 <!--                    <li class="active"><a href="/food-share/web/index.php">Home</a></li>-->
 <!--                    <li><a href="#available-foods">Available Foods</a></li>-->
 <!--                    <li><a href="/food-share/web/create-food-offering/offer-food.php">Share Foods</a></li>-->
