@@ -40,10 +40,14 @@ $lat = $_POST["lat"];
 $lng = $_POST["lng"];
 $pick_up_time = $_POST["ready-time"];
 $ready_time = $_POST["pick-up-time"];
+$quantity = $_POST["quantity"];
 $email = $_POST["email"];
 $phone_number = $_POST["phone-number"];
 
-$sql = "INSERT INTO share_food.food_offering (title, description, category, lat, lng, ready_time, pick_up_time, email, phone_number, image, is_available) VALUES ('$subject', '$description', '$category', '$lat', '$lng', '$ready_time', '$pick_up_time', '$email', '$phone_number', '$image', '1')";
+$sql = "INSERT INTO share_food.food_offering
+(title, description, category, lat, lng, ready_time, pick_up_time, quantity, email, phone_number, image, is_available)
+VALUES
+('$subject', '$description', '$category', '$lat', '$lng', '$ready_time', '$pick_up_time', $quantity, '$email', '$phone_number', '$image', '1')";
 
 if ($conn->query($sql) === TRUE) {
     // Let's display success message

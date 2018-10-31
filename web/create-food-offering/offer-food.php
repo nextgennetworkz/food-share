@@ -61,6 +61,10 @@ include("../main-nav.php"); ?>
                            required="required">
                 </div>
                 <div class="form-wrp">
+                    <label>Quantiry</label><br>
+                    <input type="number" placeholder="Enter quantity" id="quantity" name="quantity" required="required">
+                </div>
+                <div class="form-wrp">
                     <label>e-mail address</label><br>
                     <input type="email" placeholder="Enter email address" id="email" name="email"
                            required="required">

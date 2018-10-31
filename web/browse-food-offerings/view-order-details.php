@@ -28,7 +28,7 @@ require_once("../../config/db-connection.php");
 $id = $_GET['id'];
 
 // Let's load order info from database
-$sql = "SELECT id, title, description, category, lat, lng, ready_time, pick_up_time, is_available, email, phone_number, image FROM share_food.food_offering WHERE id = $id";
+$sql = "SELECT id, title, description, category, lat, lng, ready_time, pick_up_time, quantity, is_available, email, phone_number, image FROM share_food.food_offering WHERE id = $id";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -50,11 +50,12 @@ $conn->close();
             <p><label>Title:</label> <?php echo $row['title']; ?></p>
             <p><label>Category:</label> <?php echo $row['category']; ?></p>
             <p><label>Description:</label> <?php echo $row['description']; ?></p>
-            <p><label>Expire Date:</label> <?php echo $row['pick_up_time']; ?></p>
+            <p><label>Pick-up time:</label> <?php echo $row['pick_up_time']; ?></p>
             <p><label>Pick-up Location:</label>
             <div id="map"></div>
             </p>
-            <p><label>Finished cooking at:</label> <?php echo $row['ready_time']; ?></p>
+            <p><label>Ready time:</label> <?php echo $row['ready_time']; ?></p>
+            <p><label>Quantity:</label> <?php echo $row['quantity']; ?></p>
             <p><label>Email :</label> <?php echo $row['email']; ?></p>
             <p><label>Phone :</label> <?php echo $row['phone_number']; ?></p>
 
