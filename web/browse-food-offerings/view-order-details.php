@@ -14,7 +14,7 @@ Time: 7:47 AM-->
     </style>
 
     <script async defer type="text/javascript"
-            src="https://maps.googleapis.com/maps/api/js?key=API_KEY&callback=initMap"></script>
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCsPprUpfG8KJ0jizQNtg47uUpgE3RbSW4&callback=initMap"></script>
 </head>
 
 <?php
