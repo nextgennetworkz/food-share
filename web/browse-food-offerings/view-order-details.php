@@ -1,10 +1,23 @@
+<!--
+Created by Nishen Peiris.
+User: root
+Date: 10/12/18
+Time: 7:47 AM-->
+
+<head>
+    <style>
+        /* Always set the map height explicitly to define the size of the div
+         * element that contains the map. */
+        #map {
+            height: 100%;
+        }
+    </style>
+
+    <script async defer type="text/javascript"
+            src="https://maps.googleapis.com/maps/api/js?key=API_KEY&callback=initMap"></script>
+</head>
+
 <?php
-/**
- * Created by Nishen Peiris.
- * User: root
- * Date: 10/12/18
- * Time: 7:47 AM
- */
 include('../../resources/session.php');
 include("../header.php");
 include("../main-nav.php");
@@ -21,8 +34,12 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
 }
+$lat = $row['lat'];
+$lng = $row['lng'];
+
 $conn->close();
 ?>
+
 <section class="food-details">
     <div class="container">
         <h1>Food Item Details</h1>
@@ -34,15 +51,23 @@ $conn->close();
             <p><label>Category:</label> <?php echo $row['category']; ?></p>
             <p><label>Description:</label> <?php echo $row['description']; ?></p>
             <p><label>Expire Date:</label> <?php echo $row['pick_up_time']; ?></p>
-            <p><label>Pick-up Location:</label> <?php echo $row['pick_up_location']; ?></p>
+            <p><label>Pick-up Location:</label>
+            <div id="map"></div>
+            </p>
             <p><label>Finished cooking at:</label> <?php echo $row['ready_time']; ?></p>
             <p><label>Email :</label> <?php echo $row['email']; ?></p>
             <p><label>Phone :</label> <?php echo $row['phone_number']; ?></p>
+
+            <input type="text" id="lat" name="lat" value="<?php echo $lat; ?>" hidden="hidden">
+            <input type="text" id="lng" name="lng" value="<?php echo $lng; ?>" hidden="hidden">
+
             <div class="confirm">
                 <a href="/food-share/web/browse-food-offerings/confirm-order-placement.php?id=<?php echo $row['id']; ?>">Confirm</a>
             </div>
         </div>
-
     </div>
+
+    <script type="text/javascript" src="../../resources/js/map.read.only.js"></script>
 </section>
+
 <?php include("../footer.php"); ?>

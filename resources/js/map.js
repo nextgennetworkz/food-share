@@ -5,7 +5,6 @@ var marker = false; ////Has the user plotted their location marker?
 //Function called to initialize / create the map.
 //This is called when the page has loaded.
 function initMap() {
-
     //The center location of our map.
     var centerOfMap = new google.maps.LatLng(7.8855063, 80.6395089);
 
@@ -52,7 +51,6 @@ function markerLocation() {
     document.getElementById('lat').value = currentLocation.lat(); //latitude
     document.getElementById('lng').value = currentLocation.lng(); //longitude
 }
-
 
 //Load the map when the page has finished loading.
 google.maps.event.addDomListener(window, 'load', initMap);

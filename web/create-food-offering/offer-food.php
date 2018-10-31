@@ -5,9 +5,9 @@
             height: 500px;
         }
     </style>
-    <!--<script async defer type="text/javascript"
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvkniffw2aFnkkYd4omeJOMPVBSqW_QGM&callback=initMap"></script>-->
-    <script async defer type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+
+    <script async defer type="text/javascript"
+            src="https://maps.googleapis.com/maps/api/js?key=API_KEY&callback=initMap"></script>
 </head>
 
 <?php
