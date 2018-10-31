@@ -1,22 +1,29 @@
+<head>
+    <style type="text/css">
+        #map {
+            width: 700px;
+            height: 500px;
+        }
+    </style>
+
+    <script async defer type="text/javascript"
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCsPprUpfG8KJ0jizQNtg47uUpgE3RbSW4&callback=initMap"></script>
+</head>
+
 <?php
 include('../../resources/session.php');
-?>
+include("../header.php");
+include("../main-nav.php"); ?>
 
-<!--<form action="offer-food-process.php" method="post">-->
-<!--    Title: <input type="text" id="title" name="title" required="required"><br>-->
-<!--    Description: <input type="text" id="description" name="description" required="required"><br>-->
-<!--    Approximate pick-up location: <input type="text" id="pick-up-location" name="pick-up-location"-->
-<!--                                         required="required"><br>-->
-<!--    Pick-up times: <input type="text" id="pick-up-times" name="pick-up-times" required="required"><br>-->
-<!--    <input type="submit" value="Submit">-->
-<!--</form>-->
-<?php include("../header.php"); ?>
-<?php include("../main-nav.php"); ?>
 <section class="offer-food">
     <div class="container ">
         <div class="offer-form">
             <h2>Share Foods</h2>
-            <form action="offer-food-process.php" method="post">
+            <form action="offer-food-process.php" method="post" enctype="multipart/form-data">
+                <div class="form-wrp">
+                    <label>Title</label><br>
+                    <input type="file" id="uploaded-file" name="uploaded-file" required="required">
+                </div>
                 <div class="form-wrp">
                     <label>Title</label><br>
                     <input type="text" placeholder="Enter Title" id="title" name="title" required="required">
@@ -39,8 +46,9 @@ include('../../resources/session.php');
                 </div>
                 <div class="form-wrp">
                     <label>Approximate pick-up location</label><br>
-                    <input type="text" placeholder="Enter Pick-up Location" id="pick-up-location"
-                           name="pick-up-location" required="required">
+                    <div id="map"></div>
+                    <input type="text" id="lat" name="lat" readonly="readonly" hidden="hidden">
+                    <input type="text" id="lng" name="lng" readonly="readonly" hidden="hidden">
                 </div>
                 <div class="form-wrp">
                     <label>Ready time</label><br>
@@ -64,9 +72,9 @@ include('../../resources/session.php');
                 </div>
                 <button>Offer Now</button>
             </form>
-
+            <script type="text/javascript" src="../../resources/js/map.js"></script>
         </div>
-
     </div>
 </section>
+
 <?php include("../footer.php"); ?>

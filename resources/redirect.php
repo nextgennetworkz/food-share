@@ -13,6 +13,8 @@
  */
 function redirect($url, $permanent = false)
 {
-    header('Location: ' . $url, true, $permanent ? 301 : 302);
+    echo '<script language="javascript">';
+    echo 'window.location.replace("' . $url . '")';
+    echo '</script>';
     exit();
 }

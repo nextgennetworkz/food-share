@@ -1,7 +1,3 @@
-<?php
-session_start();
-?>
-
 <header>
     <!--bootstrap nav bar from w3schools-->
     <nav class="navbar navbar-default page_header">
@@ -18,15 +14,20 @@ session_start();
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right links">
-                    <li class="active"><a href="/food-share/web/index.php">Home</a></li>
-                    <li><a href="#available-foods">Avialable Foods</a></li>
-                    <li><a href="/food-share/web/create-food-offering/offer-food.php">Share Foods</a></li>
+                    <li <?php if (basename($_SERVER['PHP_SELF']) == 'index.php') echo 'class="active"' ?>><a href="/food-share/web/index.php">Home</a></li>
+                    <li <?php if (basename($_SERVER['PHP_SELF']) == 'view-all-food-offerings.php') echo 'class="active"' ?>><a href="/food-share/web/browse-food-offerings/view-all-food-offerings.php">Available Foods</a></li>
+                    <li <?php if (basename($_SERVER['PHP_SELF']) == 'offer-food.php') echo 'class="active"' ?>><a href="/food-share/web/create-food-offering/offer-food.php">Share Foods</a></li>
+<!--                    <li class="active"><a href="/food-share/web/index.php">Home</a></li>-->
+<!--                    <li><a href="#available-foods">Available Foods</a></li>-->
+<!--                    <li><a href="/food-share/web/create-food-offering/offer-food.php">Share Foods</a></li>-->
 
-                    <!-- Let's show sign in / up options for unsigned sessions -->
+                    <!-- Let's show sign in/up, or login options accordingly -->
                     <?php
                     if (!isset($_SESSION['login_user'])) {
-                        echo "<li><a href=\"#join\">Join With Us</a></li>";
+                        echo "<li><a href=\"/food-share/web/#join\">Join With Us</a></li>";
                         echo "<li><a href=\"/food-share/web/sign-in/sign-in.php\">Sign In to My Account</a></li>";
+                    } else {
+                        echo "<li><a href=\"/food-share/resources/sign-out.php\">Sign out</a></li>";
                     }
                     ?>
                 </ul>

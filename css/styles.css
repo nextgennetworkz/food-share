@@ -141,7 +141,17 @@
 .join-container button:focus {
     outline: none;
 }
-
+.join-container select{
+    padding: 12px;
+    font-family: Raleway-Light;
+    border: 1px solid #f7931e;
+    border-radius: 50px;
+    width: 100%;
+    text-align-last: center;
+}
+.join-container select:focus{
+    outline: none;
+}
 /*------------------ signing page ------------------*/
 
 .signing {
@@ -199,10 +209,17 @@
     -webkit-box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
     box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
+    margin-bottom: 20px;
 }
 
 .signing .signing-form button:focus {
     outline: none;
+}
+.signing a{
+    font-family: Raleway-Light;
+    color: #122b40;
+    font-weight: 700;
+
 }
 
 /*...................offer foods.....................*/
@@ -271,7 +288,16 @@
 .offer-food .offer-form button:focus {
     outline: none;
 }
-
+.offer-food select{
+    padding: 12px;
+    font-family: Raleway-Light;
+    border: 1px solid #f7931e;
+    border-radius: 50px;
+    width: 100%;
+}
+.offer-food select:focus{
+    outline: none;
+}
 /*.....................available foods.................*/
 #available-foods {
     min-height: 100vh;
@@ -317,12 +343,13 @@
     opacity: 1;
 }
 
-#available-foods .food-item .middle button {
+#available-foods .food-item .middle a {
     background: #f7931e;
     color: #ffffff;
     padding: 10px;
     opacity: 1;
     border: none;
+    text-decoration: none;
 }
 
 #available-foods .food-item .item-name {
@@ -384,9 +411,144 @@
     -moz-box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
     box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
 }
+.food-details h1{
+    font-family: Spirax-Regular;
+    text-align: center;
+    color: #f7931e;
+}
+.food-details img{
+    border: 1px solid #f7931e;
+    margin: 0 auto;
+}
+.food-details p{
+    font-family: Raleway-Light;
+}
+.food-details .confirm{
+    background: #f7931e;
+    padding: 10px;
+    opacity: 1;
+    border: none;
+    font-family: Raleway-Light;
+    font-size: 20px;
+    width: 25%;
+    text-align: center;
+}
+.list-items img{
+    /*min-width: 400px;*/
+    /*min-height: 400px;*/
+}
+.footer-sec{
+    background: #f7931e;
+    font-family: Roboto-Thin;
+    text-align: center;
+    color: #ffffff;
+    padding: 23px;
+}
+.food-details{
+    margin-bottom: 30px;
+}
+.food-details .confirm a{
+    text-decoration: none;
+    color: #ffffff;
+}
+/*------------ Responsive ----------------*/
 
 @media (max-width: 1024px) {
-
+    #join{
+        min-height: 119vh;
+    }
+    .join-container button{
+        font-size: 20px;
+    }
+    #available-foods .food-item p {
+        font-size: 12px;
+    }
 }
-
-/*------------ Responsive ----------------*/
+@media (max-width: 768px) {
+    .navbar-nav > li {
+        padding: 0px;
+        font-size: 12px;
+    }
+    .main-slider-sec .home-button button{
+        left: 27%;
+    }
+    #available-foods .view-all{
+        padding: 12px;
+        font-size: 21px;
+    }
+    .join-container button {
+        font-size: 17px;
+    }
+    .signing .signing-form{
+        width: 50%;
+    }
+    .offer-food .offer-form{
+        width: 80%;
+    }
+}
+@media (max-width: 425px){
+    .main-slider-sec .home-button button{
+        left: 33%;
+        padding: 10px;
+        font-size: 15px;
+        top: 55%;
+    }
+    #available-foods .view-all {
+        padding: 14px;
+        font-size: 16px;
+        width: 50%;
+    }
+    .join-container button {
+        font-size: 15px;
+        width: 50%;
+    }
+    #join {
+        min-height: 139vh;
+    }
+    #available-foods .food-item p {
+        font-size: 11px;
+    }
+    .signing .signing-form {
+        width: 80%;
+        padding: 15px;
+    }
+    .signing .signing-form h2{
+        font-size: 23px;
+    }
+    .offer-food .offer-form {
+        width: 90%;
+        padding: 16px;
+    }
+}
+@media (max-width: 375px){
+    .join-container button {
+        font-size: 13px;
+    }
+    #available-foods .view-all {
+        font-size: 13px;
+    }
+    #available-foods .food-item p {
+        font-size: 10px;
+    }
+    .signing .signing-form {
+        width: 90%;
+        padding: 14px;
+    }
+    .signing .signing-form button{
+        padding: 8px;
+        width: 57%;
+        font-size: 20px;
+    }
+    .offer-food .offer-form button{
+        width: 56%;
+    }
+}
+@media (max-width: 325px){
+    .main-slider-sec .home-button button {
+        left: 27%;
+    }
+    .offer-food .offer-form button{
+        width: 60%;
+        font-size: 17px;
+    }
+}
