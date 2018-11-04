@@ -139,11 +139,14 @@ require_once("../config/db-connection.php");
                                 <option selected="selected" disabled="disabled">Select your preferred food category
                                 </option>
                                 <option value="Fruits">Fruits</option>
-                                <option value="Vegetables">Vegetables</option>
+                                <option value="Rice">Rice</option>
+                                <option value="Noodles">Noodles</option>
+                                <option value="Burgers">Burgers</option>
                                 <option value="Protein">Protein</option>
                                 <option value="Dairy">Dairy</option>
                                 <option value="Grains">Grains</option>
                                 <option value="Oils">Oils</option>
+                                <option value="Other">Other</option>
                             </select>
                         </div>
                     </div>

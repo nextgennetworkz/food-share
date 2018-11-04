@@ -25,7 +25,7 @@ include("../main-nav.php"); ?>
                     <input type="file" id="uploaded-file" name="uploaded-file" required="required">
                 </div>
                 <div class="form-wrp">
-                    <label>Title</label><br>
+                    <label>Image</label><br>
                     <input type="text" placeholder="Enter Title" id="title" name="title" required="required">
                 </div>
                 <div class="form-wrp">
@@ -37,11 +37,14 @@ include("../main-nav.php"); ?>
                     <label>Category</label><br>
                     <select placeholder="Select Food Category" id="category" name="category" required="required">
                         <option value="Fruits">Fruits</option>
-                        <option value="Vegetables">Vegetables</option>
+                        <option value="Rice">Rice</option>
+                        <option value="Noodles">Noodles</option>
+                        <option value="Burgers">Burgers</option>
                         <option value="Protein">Protein</option>
                         <option value="Dairy">Dairy</option>
                         <option value="Grains">Grains</option>
                         <option value="Oils">Oils</option>
+                        <option value="Other">Other</option>
                     </select>
                 </div>
                 <div class="form-wrp">
@@ -51,7 +54,7 @@ include("../main-nav.php"); ?>
                     <input type="text" id="lng" name="lng" readonly="readonly" hidden="hidden">
                 </div>
                 <div class="form-wrp">
-                    <label>Ready time</label><br>
+                    <label>Food Ready time</label><br>
                     <input type="datetime-local" placeholder="Enter ready time" id="ready-time" name="ready-time"
                            required="required">
                 </div>
@@ -65,7 +68,7 @@ include("../main-nav.php"); ?>
                     <input type="number" placeholder="Enter quantity" id="quantity" name="quantity" required="required">
                 </div>
                 <div class="form-wrp">
-                    <label>e-mail address</label><br>
+                    <label>E-mail address</label><br>
                     <input type="email" placeholder="Enter email address" id="email" name="email"
                            required="required">
                 </div>

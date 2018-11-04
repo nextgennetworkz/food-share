@@ -54,7 +54,7 @@ $conn->close();
             <p><label>Pick-up Location:</label>
             <div id="map"></div>
             </p>
-            <p><label>Ready time:</label> <?php echo $row['ready_time']; ?></p>
+            <p><label>Food Ready time:</label> <?php echo $row['ready_time']; ?></p>
             <p><label>Quantity:</label> <?php echo $row['quantity']; ?></p>
             <p><label>Email :</label> <?php echo $row['email']; ?></p>
             <p><label>Phone :</label> <?php echo $row['phone_number']; ?></p>
