@@ -104,7 +104,8 @@ require_once("../config/db-connection.php");
                                 <?php //echo $row['description']; ?><!--</p><br>-->
                                 <p>Expire Date: <?php echo $row['pick_up_time']; ?></p><br>
                                 <p>Pick-up Location: <?php echo $row['pick_up_location']; ?></p><br>
-                                <a href="/food-share/web/browse-food-offerings/view-order-details.php?id=<?php echo $row['id']; ?>"> Order now</a>
+                                <a href="/food-share/web/browse-food-offerings/view-order-details.php?id=<?php echo $row['id']; ?>">
+                                    Order now</a>
                             </div>
                         </div>
                     </div>
@@ -113,7 +114,9 @@ require_once("../config/db-connection.php");
                 $conn->close();
                 ?>
 
-                <button onclick="window.location.href='/food-share/web/browse-food-offerings/view-all-food-offerings.php'" class="view-all">View All Items</button>
+                <button onclick="window.location.href='/food-share/web/browse-food-offerings/view-all-food-offerings.php'"
+                        class="view-all">View All Items
+                </button>
             </div>
         </div>
     </section>
