@@ -18,7 +18,7 @@ $preferred_category = $_POST["preferred_category"];
 $email_address = $_POST["email_address"];
 
 // Let's update user profile
-$sql = "UPDATE share_food.user SET first_name = $first_name, last_name = $last_name, preferred_category = $preferred_category WHERE email_address = $email_address";
+$sql = "UPDATE share_food.user SET first_name = '$first_name', last_name = '$last_name', preferred_category = '$preferred_category' WHERE email_address = '$email_address'";
 if ($conn->query($sql) === TRUE) {
     // Let's display success message
     displayAlert("Your profile update request has been processed successfully.");
@@ -28,4 +28,4 @@ if ($conn->query($sql) === TRUE) {
 $conn->close();
 
 // Let's redirect to view-all-food-offerings.php
-redirect('../../', false);
+redirect('../', false);
