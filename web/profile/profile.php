@@ -1,33 +1,24 @@
 <?php
-//session_start();
-//include('../../resources/session.php');
+session_start();
+
+include('../../resources/session.php');
 include("../header.php");
 include("../main-nav.php");
 
 require_once("../../config/db-connection.php");
-//require_once("../../resources/show-alert.php");
-//require_once("../../resources/redirect.php");
+require_once("../../resources/show-alert.php");
+require_once("../../resources/redirect.php");
 
 // Let's load profile information from DB by email address in session
 $email_address = $_SESSION["login_user"];
 
-echo $email_address;
-//$sql = "SELECT id, title, description, category, lat, lng, ready_time, pick_up_time, quantity, is_available, email, phone_number, image FROM share_food.food_offering WHERE id = 28";
-//echo "GGGGGGGGGGGGGGGGG";
-//$result = $conn->query($sql);
-//echo "GGGGGGGGGGGGGGGGG";
-//
-//if ($result->num_rows > 0) {
-//    $row = $result->fetch_assoc();
-//}
-
-//$sql = "SELECT first_name, last_name, preferred_category, email_address, password FROM share_food.user WHERE email_address = '$email_address';";
-//$result = $conn->query($sql);
-//if ($result->num_rows > 0) {
-//    $row = $result->fetch_assoc();
-//} else {
-//    displayAlert("Error while fetching profile info from database");
-//}
+$sql = "SELECT first_name, last_name, preferred_category, email_address, password FROM share_food.user WHERE email_address = '$email_address';";
+$result = $conn->query($sql);
+if ($result->num_rows > 0) {
+    $row = $result->fetch_assoc();
+} else {
+    displayAlert("Error while fetching profile info from database");
+}
 
 $first_name = $row['first_name'];
 $last_name = $row['last_name'];
@@ -44,8 +35,8 @@ $conn->close();
                 <form action="profile-process.php" method="post">
                     <div class="form-wrp">
                         <label>e-mail</label><br>
-                        <input type="email" placeholder="Your e-mail address" id="e_mail" name="e_mail"
-                               required="required" readonly="readonly" value="<?php echo $email_address; ?>">
+                        <input type="email" id="email_address" name="email_address" required="required"
+                               readonly="readonly" value="<?php echo $email_address; ?>">
                     </div>
                     <div class="form-wrp">
                         <label>First name</label><br>
@@ -59,18 +50,28 @@ $conn->close();
                     </div>
                     <div class="form-wrp">
                         <label>Category</label><br>
-                        <select placeholder="Select Food Category" id="category" name="category" required="required">
-                            <option value="Fruits">Fruits</option>
-                            <option value="Vegetables">Vegetables</option>
-                            <option value="Protein">Protein</option>
-                            <option value="Dairy">Dairy</option>
-                            <option value="Grains">Grains</option>
-                            <option value="Oils">Oils</option>
+                        <select placeholder="Select Food Category" id="preferred_category" name="preferred_category"
+                                required="required">
+                            <option value="Fruits" <?php echo ("Fruits" != $preferred_category) ?: "selected" ?>>
+                                Fruits
+                            </option>
+                            <option value="Vegetables" <?php echo ("Vegetables" != $preferred_category) ?: "selected" ?>>
+                                Vegetables
+                            </option>
+                            <option value="Protein" <?php echo ("Protein" != $preferred_category) ?: "selected" ?>>
+                                Protein
+                            </option>
+                            <option value="Dairy" <?php echo ("Dairy" != $preferred_category) ?: "selected" ?>>Dairy
+                            </option>
+                            <option value="Grains" <?php echo ("Grains" != $preferred_category) ?: "selected" ?>>
+                                Grains
+                            </option>
+                            <option value="Oils" <?php echo ("Oils" != $preferred_category) ?: "selected" ?>>Oils
+                            </option>
                         </select>
                     </div>
                     <button>Save</button>
                 </form>
-                <script type="text/javascript" src="../../resources/js/map.js"></script>
             </div>
         </div>
     </section>
