@@ -34,7 +34,7 @@ $conn->close();
                 <h2>Edit profile</h2>
                 <form action="profile-process.php" method="post">
                     <div class="form-wrp">
-                        <label>e-mail</label><br>
+                        <label>E-mail</label><br>
                         <input type="email" id="email_address" name="email_address" required="required"
                                readonly="readonly" value="<?php echo $email_address; ?>">
                     </div>
@@ -57,6 +57,15 @@ $conn->close();
                             </option>
                             <option value="Vegetables" <?php echo ("Vegetables" != $preferred_category) ?: "selected" ?>>
                                 Vegetables
+                            </option>
+                            <option value="Rice" <?php echo ("Rice" != $preferred_category) ?: "selected" ?>>
+                                Rice
+                            </option>
+                            <option value="Noodles" <?php echo ("Noodles" != $preferred_category) ?: "selected" ?>>
+                                Noodles
+                            </option>
+                            <option value="Burgers" <?php echo ("Burgers" != $preferred_category) ?: "selected" ?>>
+                                Burgers
                             </option>
                             <option value="Protein" <?php echo ("Protein" != $preferred_category) ?: "selected" ?>>
                                 Protein
