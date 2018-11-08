@@ -5,7 +5,6 @@
  * Date: 10/4/18
  * Time: 10:29 AM
  */
-require_once("../resources/show-alert.php");
 
 $servername = "localhost";
 $username = "root";

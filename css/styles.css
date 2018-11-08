@@ -54,6 +54,7 @@
     background: #ffffff;
     border-bottom: solid 2px #f7931e;
 }
+
 .page_header .dropdown {
     position: relative;
     display: inline-block;
@@ -65,7 +66,7 @@
     right: 0;
     background-color: #fffccc;
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
     padding: 10px;
     font-size: 14px;
@@ -78,8 +79,13 @@
     display: block;
 }
 
-.page_header .dropdown-content a:hover {background-color: #f1f1f1;}
-.page_header .dropdown:hover .dropdown-content {display: block;}
+.page_header .dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.page_header .dropdown:hover .dropdown-content {
+    display: block;
+}
 
 /*.............main slider..................*/
 .main-slider-sec img {
@@ -361,7 +367,8 @@
     opacity: 1;
 
 }
-#available-foods .food-item:hover .middle p{
+
+#available-foods .food-item:hover .middle p {
     font-size: 10px;
 }
 
@@ -398,6 +405,7 @@
     padding: 10px;
 
 }
+
 #available-foods .food-item .item-name:before {
     content: '';
     position: absolute;
@@ -495,6 +503,7 @@
     text-decoration: none;
     color: #ffffff;
 }
+
 /*................profile update.............*/
 
 .profile-update {
@@ -574,7 +583,6 @@
 .profile-update select:focus {
     outline: none;
 }
-
 
 /*------------ Responsive ----------------*/
 
