@@ -22,13 +22,15 @@
                     <li <?php if (basename($_SERVER['PHP_SELF']) == 'offer-food.php') echo 'class="active"' ?>><a
                                 href="/food-share/web/create-food-offering/offer-food.php">Share Food</a></li>
 
+
                     <!-- Let's show sign in/up, or login options accordingly -->
                     <?php
                     if (!isset($_SESSION['login_user'])) {
                         echo "<li><a href=\"/food-share/web/#join\">Join With Us</a></li>";
                         echo "<li><a href=\"/food-share/web/sign-in/sign-in.php\">Sign In to My Account</a></li>";
                     } else {
-                        echo "<li><a href=\"/food-share/resources/sign-out.php\">Sign out</a></li>";
+                        echo "<li><div class='dropdown' style='float:left;'><img src='/food-share/images/user.png' class='dropbtn'><div class='dropdown-content'><a href='/food-share/resources/sign-out.php'><i class='fa fa-sign-out'></i> Sign out</a><a href='/food-share/web/profile/profile.php'><i class='fa fa-edit'></i> Edit Profile</a></div></div></li>";
+
                     }
                     ?>
                 </ul>

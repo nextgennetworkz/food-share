@@ -22,7 +22,8 @@ if ($result->num_rows > 0) {
     $conn->close();
 
     // Let's redirect user to home page
-    redirect("../", false);
+    header("Location: ../index.php");
+    exit();
 } else {
     // Let's alert user about incorrect username and password
     displayAlert("Wrong username / password!!");
