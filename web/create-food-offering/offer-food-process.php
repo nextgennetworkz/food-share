@@ -71,7 +71,7 @@ if ($conn->query($sql) === TRUE) {
         }
     }
 } else {
-    $alert = "Error:<br>" . $conn->error . "<br>" . $lat . "<br>" . $lng;
+    $alert = "Error:<br>" . $conn->error;
     displayAlert($alert);
 }
 

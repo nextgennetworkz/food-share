@@ -13,12 +13,38 @@ require_once("../../resources/redirect.php");
 require_once("../../resources/send-mail.php");
 
 // Let's extract ID from URL
-$id = $_GET['id'];
+$id = $_POST['id'];
+$requested_quantity = $_POST['quantity'];
 
-// Let's update the relevant record's is_available = false
-$sql = "UPDATE share_food.food_offering SET is_available = '0' WHERE id = $id";
+// Let's load the available quantity
+$sql = "SELECT quantity FROM share_food.food_offering WHERE id = $id";
+$result = $conn->query($sql);
+$row = $result->fetch_assoc();
+$available_quantity = $row['quantity'];
 
+// Let's calculate the remaining quantity
+$remaining_quantity = $available_quantity - $requested_quantity;
+if ($remaining_quantity < 0) {
+    displayAlert("Sorry, we don't have that much of food available");
+
+    $conn->close();
+
+    // Let's redirect to view-all-food-offerings.php
+    redirect('view-all-food-offerings.php', false);
+}
+
+// Let's update the available quantity of the relevant record
+$sql = "UPDATE share_food.food_offering SET quantity = '$remaining_quantity' WHERE id = $id";
 if ($conn->query($sql) === TRUE) {
+    // Let's update is_available of relevant record if needed
+    if ($remaining_quantity == '0') {
+        $sql = "UPDATE share_food.food_offering SET is_available = '0' WHERE id = $id";
+        if (!($conn->query($sql) === TRUE)) {
+            $alert = "Error:<br>" . $conn->error;
+            displayAlert($alert);
+        }
+    }
+
     // Let's send a mail to the corresponding donor
     $sql = "SELECT title, email FROM share_food.food_offering WHERE id = $id;";
     $result = $conn->query($sql);
@@ -33,7 +59,8 @@ if ($conn->query($sql) === TRUE) {
     // Let's display success message
     displayAlert("Your donation request has been processed successfully.");
 } else {
-    echo "Error updating order: " . $conn->error;
+    $alert = "Error:<br>" . $conn->error;
+    displayAlert($alert);
 }
 
 $conn->close();

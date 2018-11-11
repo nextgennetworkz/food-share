@@ -46,26 +46,37 @@ $conn->close();
         <div class="col-sm-6">
             <img src="data:image/jpeg;base64,<?php echo base64_encode($row['image']) ?>" class="img-responsive"/>
         </div>
-        <div class="col-sm-6">
-            <p><label>Title:</label> <?php echo $row['title']; ?></p>
-            <p><label>Category:</label> <?php echo $row['category']; ?></p>
-            <p><label>Description:</label> <?php echo $row['description']; ?></p>
-            <p><label>Pick-up time:</label> <?php echo $row['pick_up_time']; ?></p>
-            <p><label>Pick-up Location:</label>
-            <div id="map"></div>
-            </p>
-            <p><label>Food Ready time:</label> <?php echo $row['ready_time']; ?></p>
-            <p><label>Quantity:</label> <?php echo $row['quantity']; ?></p>
-            <p><label>Email :</label> <?php echo $row['email']; ?></p>
-            <p><label>Phone :</label> <?php echo $row['phone_number']; ?></p>
 
-            <input type="text" id="lat" name="lat" value="<?php echo $lat; ?>" hidden="hidden">
-            <input type="text" id="lng" name="lng" value="<?php echo $lng; ?>" hidden="hidden">
+        <form action="confirm-order-placement.php" method="post">
+            <div class="col-sm-6">
+                <p><label>Title:</label> <?php echo $row['title']; ?></p>
+                <p><label>Category:</label> <?php echo $row['category']; ?></p>
+                <p><label>Description:</label> <?php echo $row['description']; ?></p>
+                <p><label>Pick-up time:</label> <?php echo $row['pick_up_time']; ?></p>
+                <p><label>Pick-up Location:</label>
+                <div id="map"></div>
+                </p>
+                <p><label>Food Ready time:</label> <?php echo $row['ready_time']; ?></p>
+                <p><label>Quantity:</label> <?php echo $row['quantity']; ?></p>
+                <p><label>Email :</label> <?php echo $row['email']; ?></p>
+                <p><label>Phone :</label> <?php echo $row['phone_number']; ?></p>
 
-            <div class="confirm">
-                <a href="/food-share/web/browse-food-offerings/confirm-order-placement.php?id=<?php echo $row['id']; ?>">Confirm</a>
+                <p>
+                    <label>How much do you want?</label>
+                    <input type="number" id="quantity" name="quantity" required="required">
+                </p>
+
+                <!--used by the Google map-->
+                <input type="text" id="lat" name="lat" value="<?php echo $lat; ?>" hidden="hidden">
+                <input type="text" id="lng" name="lng" value="<?php echo $lng; ?>" hidden="hidden">
+
+                <!--need to send the id of the relevant offering-->
+                <input type="text" id="id" name="id" value="<?php echo $id; ?>" hidden="hidden">
+
+                <input type="submit" value="Confirm" class="confirm">
             </div>
-        </div>
+        </form>
+
     </div>
 
     <script type="text/javascript" src="../../resources/js/map.read.only.js"></script>
