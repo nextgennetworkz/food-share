@@ -45,14 +45,21 @@ if ($conn->query($sql) === TRUE) {
         }
     }
 
+    // Let's fetch the current user's name and email
+    $email_requester = $_SESSION['login_user'];
+    $sql = "SELECT first_name, last_name FROM share_food.user WHERE email_address = '$email_requester';";
+    $result = $conn->query($sql);
+    $row = $result->fetch_assoc();
+    $first_name_requester = $row['first_name'];
+    $last_name_requester = $row['last_name'];
+
     // Let's send a mail to the corresponding donor
     $sql = "SELECT title, email FROM share_food.food_offering WHERE id = $id;";
     $result = $conn->query($sql);
     $row = $result->fetch_assoc();
-
     $email = $row['email'];
     $title = $row['title'];
-    $message = "Hello donor,\n\nYour donation of $title has been requested.";
+    $message = "Hello donor,\n\nYour donation of $title has been requested by $first_name_requester $last_name_requester ($email_requester)";
 
     sendMail($email, "Request for food", $message);
 
