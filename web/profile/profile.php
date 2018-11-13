@@ -12,7 +12,7 @@ require_once("../../resources/redirect.php");
 // Let's load profile information from DB by email address in session
 $email_address = $_SESSION["login_user"];
 
-$sql = "SELECT first_name, last_name, preferred_category, email_address, password FROM share_food.user WHERE email_address = '$email_address';";
+$sql = "SELECT first_name, last_name, phone_number, address, preferred_category FROM share_food.user WHERE email_address = '$email_address';";
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
@@ -22,12 +22,13 @@ if ($result->num_rows > 0) {
 
 $first_name = $row['first_name'];
 $last_name = $row['last_name'];
+$phone_number = $row['phone_number'];
+$address = $row['address'];
 $preferred_category = $row['preferred_category'];
 $password = $row['password'];
 
 $conn->close();
 ?>
-
     <section class="profile-update">
         <div class="container ">
             <div class="profile-form">
@@ -45,8 +46,18 @@ $conn->close();
                     </div>
                     <div class="form-wrp">
                         <label>Last name</label><br>
-                        <input type="text" placeholder="Enter your ID" id="last_name" name="last_name"
+                        <input type="text" placeholder="Enter your last name" id="last_name" name="last_name"
                                required="required" value="<?php echo $last_name; ?>">
+                    </div>
+                    <div class="form-wrp">
+                        <label>Phone number</label><br>
+                        <input type="text" placeholder="Enter your phone number" id="phone_number" name="phone_number"
+                               required="required" value="<?php echo $phone_number; ?>">
+                    </div>
+                    <div class="form-wrp">
+                        <label>Address</label><br>
+                        <input type="text" placeholder="Enter your address" id="address" name="address"
+                               required="required" value="<?php echo $address; ?>">
                     </div>
                     <div class="form-wrp">
                         <label>Category</label><br>

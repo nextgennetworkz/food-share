@@ -125,11 +125,27 @@ require_once("../config/db-connection.php");
                                    required="required">
                         </div>
                         <div class="form-wrp">
-                            <input placeholder="Enter Your Email Address" type="email" id="email_address"
-                                   name="email_address" required="required">
+                            <input placeholder="Enter Your Phone number" type="text" id="phone_number"
+                                   name="phone_number" required="required">
+                        </div>
+                        <div class="form-wrp">
+                            <input placeholder="Enter Your Address" type="text" id="address"
+                                   name="address" required="required">
+                        </div>
+                        <div class="form-wrp">
+                            <input type="password" placeholder="Enter Your Password" id="password" name="password"
+                                   required="required">
                         </div>
                     </div>
                     <div class="col-sm-6">
+                        <div class="form-wrp">
+                            <input type="text" placeholder="Enter Your Last Name" id="last_name" name="last_name"
+                                   required="required">
+                        </div>
+                        <div class="form-wrp">
+                            <input placeholder="Enter Your Email Address" type="email" id="email_address"
+                                   name="email_address" required="required">
+                        </div>
                         <div class="form-wrp">
                             <select id="category" name="category" required="required">
                                 <option selected="selected" disabled="disabled">Select your preferred food category
@@ -144,16 +160,6 @@ require_once("../config/db-connection.php");
                                 <option value="Oils">Oils</option>
                                 <option value="Other">Other</option>
                             </select>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="form-wrp">
-                            <input type="text" placeholder="Enter Your Last Name" id="last_name" name="last_name"
-                                   required="required">
-                        </div>
-                        <div class="form-wrp">
-                            <input type="password" placeholder="Enter Your Password" id="password" name="password"
-                                   required="required">
                         </div>
                     </div>
                     <button>create my account</button>

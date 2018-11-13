@@ -14,11 +14,13 @@ require_once("../../resources/redirect.php");
 // Let's extract request parameters
 $first_name = $_POST["first_name"];
 $last_name = $_POST["last_name"];
+$phone_number = $_POST['phone_number'];
+$address = $_POST['address'];
 $preferred_category = $_POST["preferred_category"];
 $email_address = $_POST["email_address"];
 
 // Let's update user profile
-$sql = "UPDATE share_food.user SET first_name = '$first_name', last_name = '$last_name', preferred_category = '$preferred_category' WHERE email_address = '$email_address'";
+$sql = "UPDATE share_food.user SET first_name = '$first_name', last_name = '$last_name', phone_number = '$phone_number', address = '$address', preferred_category = '$preferred_category' WHERE email_address = '$email_address'";
 if ($conn->query($sql) === TRUE) {
     // Let's display success message
     displayAlert("Your profile update request has been processed successfully.");

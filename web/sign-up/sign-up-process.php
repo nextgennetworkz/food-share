@@ -11,8 +11,10 @@ require_once("../../resources/show-alert.php");
 // Let's extract request parameters
 $first_name = $_POST["first_name"];
 $last_name = $_POST["last_name"];
-$category = $_POST["category"];
+$phone_number = $_POST["phone_number"];
 $email_address = $_POST["email_address"];
+$address = $_POST["address"];
+$category = $_POST["category"];
 $password = md5($_POST["password"]);
 
 // Let's check if an account already exists with this email
@@ -24,7 +26,7 @@ if ($result->num_rows > 0) {
     displayAlert("User account already exists with this email address!");
 } else {
     // Let's insert user into database
-    $sql = "INSERT INTO share_food.user (first_name, last_name, preferred_category, email_address, password) VALUES ('$first_name', '$last_name', '$category', '$email_address', '$password')";
+    $sql = "INSERT INTO share_food.user (first_name, last_name, phone_number, email_address, address,  preferred_category, password) VALUES ('$first_name', '$last_name', '$phone_number', '$email_address', '$address', '$category', '$password');";
 
     if ($conn->query($sql) === TRUE) {
         // Let's display success message
